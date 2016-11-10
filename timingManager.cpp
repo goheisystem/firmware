@@ -9,6 +9,7 @@
 
 #include "mbed.h"
 
+Ticker TimingManager::ticker;
 
 TimingManager::TimingManager()
 {

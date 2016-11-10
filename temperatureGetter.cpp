@@ -8,9 +8,11 @@
 #include "temperatureGetter.hpp"
 #include "math.h"
 
+AnalogIn TemperatureGetter::analogIn(THERMISTOR_PORT);
+
 TemperatureGetter::TemperatureGetter()
 {
-	analogIn = AnalogIn(THERMISTOR_PORT);
+
 }
 
 float_t TemperatureGetter::calcurateThermistorTemperature(float_t thermistorVoltage)
