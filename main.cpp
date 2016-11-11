@@ -1,13 +1,10 @@
-#include "mbed.h"
-
-DigitalOut myled(LED1);
+#include "temperatureGetter.hpp"
 
 int main() {
+	TemperatureGetter temperatureGetter;
     while(1) {
-        myled = 1;
-        wait(2);
-        myled = 0;
-        wait(2);
-        printf("mbed\n");
+    	float_t temperature = temperatureGetter.getTemperature();
+    	printf("%f deg \n",temperature);
+    	wait(1);
     }
 }
