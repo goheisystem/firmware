@@ -8,6 +8,9 @@
 #ifndef STATEMANAGER_HPP_
 #define STATEMANAGER_HPP_
 
+#include "timingManager.hpp"
+#include "temperatureGetter.hpp"
+
 typedef enum {
 	HEATING,
 	KEEPING,
@@ -20,9 +23,11 @@ public:
 	void stopManaging();
 	void manageRoutine();
 private:
-	SystemStatus calcrateNextState();
+	SystemStatus calcurateNextState(float_t );
 private:
 	SystemStatus currentStatus;
+	static TimingManager timingManager;
+	static TemperatureGetter temperatureGetter;
 };
 
 
