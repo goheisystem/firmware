@@ -8,3 +8,20 @@
 
 
 
+void StateManager::startManaging()
+{
+
+}
+void StateManager::stopManaging()
+{
+
+}
+void manageRoutine()
+{
+
+}
+
+SystemStatus StateManager::calcrateNextState()
+{
+
+}
