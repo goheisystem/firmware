@@ -10,6 +10,7 @@
 #include "mbed.h"
 
 Ticker TimingManager::ticker;
+bool TimingManager::periodElaspedFlag = false;
 
 TimingManager::TimingManager()
 {

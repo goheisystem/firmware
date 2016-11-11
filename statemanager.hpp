@@ -28,6 +28,8 @@ private:
 	SystemStatus currentStatus;
 	static TimingManager timingManager;
 	static TemperatureGetter temperatureGetter;
+	static const float_t TEMPERATURE_LOWER_LIMIT = 27;
+	static const float_t TEMPERATURE_UPPER_LIMIT = 28;
 };
 
 

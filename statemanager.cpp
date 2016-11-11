@@ -30,5 +30,28 @@ void StateManager::manageRoutine()
 
 SystemStatus StateManager::calcurateNextState(float_t currentTemperature)
 {
+	switch (currentStatus) {
+		case KEEPING:
+			if(currentTemperature >= TEMPERATURE_UPPER_LIMIT){
+				currentStatus = COOLING;
+			}
+			else if(currentTemperature < TEMPERATURE_LOWER_LIMIT){
+				currentStatus = HEATING;
+			}
+			break;
+		case HEATING:
+			if(currentTemperature >= TEMPERATURE_UPPER_LIMIT){
+				currentStatus = KEEPING;
+			}
+			break;
+		case COOLING:
+			if(currentTemperature < TEMPERATURE_LOWER_LIMIT){
+				currentStatus = KEEPING;
+			}
+			break;
+		default:
+			break;
+	}
 
+	return currentStatus;
 }
