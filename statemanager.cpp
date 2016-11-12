@@ -6,26 +6,29 @@
  */
 #include "statemanager.hpp"
 
-#include "timingManager.hpp"
-
-TimingManager StateManager::timingManager;
 TemperatureGetter StateManager::temperatureGetter;
+TemperatureControler StateManager::temperatureControler;
 
-void StateManager::startManaging()
-{
-	timingManager.clearPeriodElaspedFlag();
-	timingManager.startManaging();
-}
-void StateManager::stopManaging()
-{
-	timingManager.stopManaging();
-	timingManager.clearPeriodElaspedFlag();
-}
+
 void StateManager::manageRoutine()
 {
 	float_t currentTemperature = temperatureGetter.getTemperature();
 
 	calcurateNextState(currentTemperature);
+
+	switch (currentStatus) {
+		case KEEPING:
+			temperatureControler.keep();
+			break;
+		case COOLING:
+			temperatureControler.coolDown();
+			break;
+		case HEATING:
+			temperatureControler.heatUp();
+			break;
+		default:
+			break;
+	}
 }
 
 SystemStatus StateManager::calcurateNextState(float_t currentTemperature)

@@ -10,6 +10,7 @@
 
 #include "timingManager.hpp"
 #include "temperatureGetter.hpp"
+#include "temperaturecontroler.hpp"
 
 typedef enum {
 	HEATING,
@@ -19,15 +20,13 @@ typedef enum {
 
 class StateManager {
 public:
-	void startManaging();
-	void stopManaging();
 	void manageRoutine();
 private:
-	SystemStatus calcurateNextState(float_t );
+	SystemStatus calcurateNextState(float_t currentTemperature);
 private:
 	SystemStatus currentStatus;
-	static TimingManager timingManager;
 	static TemperatureGetter temperatureGetter;
+	static TemperatureControler temperatureControler;
 	static const float_t TEMPERATURE_LOWER_LIMIT = 27;
 	static const float_t TEMPERATURE_UPPER_LIMIT = 28;
 };

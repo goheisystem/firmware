@@ -1,10 +1,15 @@
-#include "temperatureGetter.hpp"
-
+#include "statemanager.hpp"
+#include "timingManager.hpp"
 int main() {
-	TemperatureGetter temperatureGetter;
+	StateManager stateManager;
+	TimingManager timingManager;
+
+	timingManager.startManaging();
+
     while(1) {
-    	float_t temperature = temperatureGetter.getTemperature();
-    	printf("%f deg \n",temperature);
-    	wait(1);
+    	if(timingManager.isPeriodElasped()){
+    		stateManager.manageRoutine();
+    		timingManager.clearPeriodElaspedFlag();
+    	}
     }
 }
