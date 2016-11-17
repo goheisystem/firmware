@@ -24,6 +24,7 @@ float_t TemperatureGetter::calcurateThermistorTemperature(float_t thermistorVolt
 }
 float_t TemperatureGetter::getTemperature()
 {
-	return calcurateThermistorTemperature(analogIn.read());
+	// AnalogIn::read()は, 0〜1で出力される
+	return calcurateThermistorTemperature(analogIn.read() * VDA);
 }
 

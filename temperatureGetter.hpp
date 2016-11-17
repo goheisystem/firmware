@@ -45,7 +45,7 @@ private:
 	static const float_t RP = 100000;
 
 	//! サーミスタのROOM_TEMPERATUREでの抵抗値
-	static const float_t R0 = 110000;
+	static const float_t R0 = 100000;
 
 	//! 絶対零度の摂氏温度
 	static const float_t ZERO_KELVIN = -273.15;
