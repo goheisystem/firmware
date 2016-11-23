@@ -8,7 +8,6 @@
 #ifndef STATEMANAGER_HPP_
 #define STATEMANAGER_HPP_
 
-#include "timingManager.hpp"
 #include "temperatureGetter.hpp"
 #include "temperaturecontroler.hpp"
 
@@ -21,6 +20,7 @@ typedef enum {
 class StateManager {
 public:
 	void manageRoutine();
+	StateManager();
 private:
 	SystemStatus calcurateNextState(float_t currentTemperature);
 private:

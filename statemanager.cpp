@@ -9,7 +9,10 @@
 TemperatureGetter StateManager::temperatureGetter;
 TemperatureControler StateManager::temperatureControler;
 
-
+StateManager::StateManager()
+{
+	currentStatus = KEEPING;
+}
 void StateManager::manageRoutine()
 {
 	float_t currentTemperature = temperatureGetter.getTemperature();
