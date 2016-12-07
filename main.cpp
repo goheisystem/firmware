@@ -10,7 +10,7 @@ int main() {
 	timingManager.startManaging();
 
 	//UVライト管理用オブジェクト
-	DigitalInLowPass switchManager(p8);
+	DigitalInLowPass switchManager(p29);
 	DigitalOut uvLight(p7);
 
 
