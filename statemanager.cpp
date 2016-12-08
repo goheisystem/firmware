@@ -5,6 +5,7 @@
  *      Author: user
  */
 #include "statemanager.hpp"
+#include "userdefinition.hpp"
 
 TemperatureGetter StateManager::temperatureGetter;
 TemperatureControler StateManager::temperatureControler;
@@ -18,6 +19,10 @@ void StateManager::manageRoutine()
 	float_t currentTemperature = temperatureGetter.getTemperature();
 
 	calcurateNextState(currentTemperature);
+
+#if DEBUG_SWITCH ==1
+	printf("temperature : %2.2f, statusID : %d \r\n", currentTemperature, currentStatus);
+#endif
 
 	switch (currentStatus) {
 		case KEEPING:

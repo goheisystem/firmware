@@ -8,6 +8,9 @@
 #ifndef USERDEFINITION_HPP_
 #define USERDEFINITION_HPP_
 
+//! デバッグスイッチ
+#define DEBUG_SWITCH 1
+
 
 // constants
 //! スイッチ入力のローパスカウント数
@@ -42,5 +45,6 @@
 
 //! 温度管理周期[sec]
 #define TEMPERATURE_MANAGE_PERIOD 10
+
 
 #endif /* USERDEFINITION_HPP_ */
