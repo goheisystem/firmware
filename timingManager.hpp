@@ -17,6 +17,7 @@
  * @{
  */
 #include "mbed.h"
+#include "userdefinition.hpp"
 
 class TimingManager {
 public:
@@ -49,7 +50,7 @@ private:
 	//! 周期経過フラグ
 	static bool periodElaspedFlag;
 	//! 周期 10sec
-	static const uint32_t PERIOD_SEC = 10;
+	static const uint32_t PERIOD_SEC = TEMPERATURE_MANAGE_PERIOD;
 	//! 割り込みタイマクラス
 	static Ticker ticker;
 private:

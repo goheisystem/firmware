@@ -18,6 +18,7 @@
  */
 
 #include "mbed.h"
+#include "userdefinition.hpp"
 
 class TemperatureGetter {
 public:
@@ -60,7 +61,7 @@ private:
 	static AnalogIn analogIn;
 
 	//! サーミスタを接続するポート
-	static const PinName THERMISTOR_PORT = p15;
+	static const PinName THERMISTOR_PORT = THERMISTOR_INPUT_PORT;
 };
 
 /**

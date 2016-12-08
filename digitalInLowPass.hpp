@@ -9,6 +9,7 @@
 #define DIGITALINLOWPASS_HPP_
 
 #include "mbed.h"
+#include "userdefinition.hpp"
 
 class DigitalInLowPass : public DigitalIn {
 public:
@@ -19,8 +20,8 @@ private:
 	int gpioStatus;
 	uint8_t counter;
 	int prevStatus;
-	static const uint8_t FILTER_COUNT_LIMIT = 3;
-	static const float_t TICKER_PERIOD = 0.01;
+	static const uint8_t FILTER_COUNT_LIMIT = LOW_PASS_COUNT_LIMIT;
+	static const float_t TICKER_PERIOD = LOW_PASS_TICKER_PERIOD;
 private:
 	void callBack();
 public:

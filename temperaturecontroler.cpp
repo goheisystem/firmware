@@ -6,9 +6,10 @@
  */
 
 #include "temperaturecontroler.hpp"
+#include "userdefinition.hpp"
 
-DigitalOut TemperatureControler::fan(p5);
-DigitalOut TemperatureControler::heater(p6);
+DigitalOut TemperatureControler::fan(FAN_CONTROL_PIN);
+DigitalOut TemperatureControler::heater(HEATER_CONTROL_PORT);
 
 void TemperatureControler::coolDown()
 {

@@ -1,6 +1,7 @@
 #include "statemanager.hpp"
 #include "timingManager.hpp"
 #include "digitalInLowPass.hpp"
+#include "userdefinition.hpp"
 
 
 int main() {
@@ -10,8 +11,8 @@ int main() {
 	timingManager.startManaging();
 
 	//UVライト管理用オブジェクト
-	DigitalInLowPass switchManager(p29);
-	DigitalOut uvLight(p7);
+	DigitalInLowPass switchManager(UVRIGHT_CONTROL_SWITCH_PIN);
+	DigitalOut uvLight(UVRIGHT_CONTROL_PIN);
 
 
     while(1) {

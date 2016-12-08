@@ -10,6 +10,7 @@
 
 #include "temperatureGetter.hpp"
 #include "temperaturecontroler.hpp"
+#include "userdefinition.hpp"
 
 typedef enum {
 	HEATING,
@@ -27,8 +28,8 @@ private:
 	SystemStatus currentStatus;
 	static TemperatureGetter temperatureGetter;
 	static TemperatureControler temperatureControler;
-	static const float_t TEMPERATURE_LOWER_LIMIT = 27;
-	static const float_t TEMPERATURE_UPPER_LIMIT = 28;
+	static const float_t TEMPERATURE_LOWER_LIMIT = MANAGE_TEMPERATURE_LOWER_LIMIT;
+	static const float_t TEMPERATURE_UPPER_LIMIT = MANAGE_TEMPERATURE_UPPRE_LIMIT;
 };
 
 
