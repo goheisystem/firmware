@@ -56,7 +56,7 @@ SystemStatus StateManager::calcurateNextState(float_t currentTemperature)
 			}
 			break;
 		case COOLING:
-			if(currentTemperature < TEMPERATURE_LOWER_LIMIT){
+			if(currentTemperature < TEMPERATURE_UPPER_LIMIT){
 				currentStatus = KEEPING;
 			}
 			break;
