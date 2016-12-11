@@ -10,6 +10,10 @@
 TemperatureGetter StateManager::temperatureGetter;
 TemperatureControler StateManager::temperatureControler;
 
+#if DEBUG_SWITCH == 1
+BusOut debugLED(LED1,LED2,LED3);
+#endif
+
 StateManager::StateManager()
 {
 	currentStatus = KEEPING;
@@ -20,8 +24,9 @@ void StateManager::manageRoutine()
 
 	calcurateNextState(currentTemperature);
 
-#if DEBUG_SWITCH ==1
+#if DEBUG_SWITCH == 1
 	printf("temperature : %2.2f, statusID : %d \r\n", currentTemperature, currentStatus);
+	debugLED = 0x01<<(currentStatus);
 #endif
 
 	switch (currentStatus) {
